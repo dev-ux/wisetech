@@ -13,20 +13,17 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect } from "react";
-
-// react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-
-// @mui material components
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-// Material Kit 2 React themes
+import { useEffect } from "react";
+
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+
 import theme from "assets/theme";
+
 import Presentation from "layouts/pages/presentation";
 
-// Material Kit 2 React routes
 import routes from "routes";
 
 export default function App() {

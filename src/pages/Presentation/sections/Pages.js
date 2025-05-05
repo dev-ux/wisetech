@@ -14,21 +14,16 @@ Coded by www.creative-tim.com
 */
 
 // react-router-dom components
-import { Link } from "react-router-dom";
-
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
-// Material Kit 2 React components
+import { Link } from "react-router-dom";
+
 import MKBox from "components/MKBox";
 import MKBadge from "components/MKBadge";
 import MKTypography from "components/MKTypography";
 
-// Presentation page components
 import ExampleCard from "pages/Presentation/components/ExampleCard";
-
-// Data
 import data from "pages/Presentation/sections/data/pagesData";
 
 function Pages() {
