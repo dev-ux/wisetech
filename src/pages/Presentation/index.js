@@ -21,7 +21,7 @@ import routes from "routes";
 
 import footerRoutes from "footer.routes";
 
-import bgImage from "assets/images/home.webp";
+const bgImage = "/images/home.webp";
 
 function Presentation() {
   return (
