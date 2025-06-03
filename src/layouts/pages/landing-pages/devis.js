@@ -8,7 +8,6 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import routes from "routes";
 
 export default function Devis() {
-  const [navbarTransparent, setNavbarTransparent] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
@@ -16,19 +15,6 @@ export default function Devis() {
     service: "",
     description: ""
   });
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setNavbarTransparent(false);
-      } else {
-        setNavbarTransparent(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
