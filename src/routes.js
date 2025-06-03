@@ -6,6 +6,7 @@ import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Devis from "layouts/pages/landing-pages/devis";
 import Blog from "layouts/pages/landing-pages/Blog";
+import Structural from "layouts/pages/landing-pages/Structural";
 
 
 const routes = [
@@ -15,7 +16,6 @@ const routes = [
     icon: <Icon>dashboard</Icon>,
     route: "pages/Presentation",
   },
- 
   {
     name: "Apropos",
     icon: <Icon>info</Icon>,
@@ -43,8 +43,6 @@ const routes = [
     component: <Blog />,
   },
  
-  {
-  },
   // {
   //   name: "sign in",
   //   key: "sign-in",

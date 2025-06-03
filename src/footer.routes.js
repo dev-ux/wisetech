@@ -37,7 +37,7 @@ export default {
   contact: [
     {
       icon: <LocationOnIcon fontSize="small" />,
-      text: "15 Rue de l'Innovation, 75000 Paris, France",
+      text: " 56 Bis Rue Ferdinand Buisson, 91210 Draveil, FRANCE",
     },
     {
       icon: <PhoneIcon fontSize="small" />,
@@ -52,7 +52,7 @@ export default {
     {
       name: "Expertises",
       items: [
-        { name: "Ingénierie Structurelle", href: "/services/structure" },
+        { name: "Ingénierie Structurelle", href: "/pages/Structural" },
         { name: "BIM Management", href: "/services/bim" },
         { name: "Diagnostics Techniques", href: "/services/diagnostics" },
         { name: "VRD & Infrastructures", href: "/services/vrd" },
@@ -98,3 +98,6 @@ export default {
     </MKTypography>
   ),
 };
+
+
+
