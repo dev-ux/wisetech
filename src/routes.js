@@ -4,7 +4,7 @@ import Icon from "@mui/material/Icon";
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
-import Gallery from "layouts/pages/landing-pages/gallery";
+
 
 const routes = [
   {
@@ -34,17 +34,11 @@ const routes = [
   },
  
   {
-    name: "Gallery",
-    key: "gallery",
-    icon: <Icon>photo_library</Icon>,
-    route: "/pages/landing-pages/gallery",
-    component: <Gallery />,
   },
   // {
   //   name: "sign in",
   //   key: "sign-in",
   //   route: "/pages/authentication/sign-in",
-  //   component: <SignIn />
   // },
   // {
   //   name: "sections",
