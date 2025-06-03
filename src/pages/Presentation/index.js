@@ -7,7 +7,6 @@ import Card from "@mui/material/Card";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKSocialButton from "components/MKSocialButton";
 
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
@@ -15,7 +14,6 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import Information from "pages/Presentation/sections/Information";
 import Services from "pages/Presentation/sections/Services";
 import Realisations from "pages/Presentation/sections/Realisations";
-import Contact from "pages/Presentation/sections/Contact";
 
 import routes from "routes";
 
@@ -90,8 +88,8 @@ function Presentation() {
         <Information />
         <Services />
         <Realisations />
-        <Contact />
-        <MKBox pt={18} pb={6}> 
+        {/* <Contact /> */}
+        {/* <MKBox pt={18} pb={6}> 
           <Container>
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
@@ -142,7 +140,7 @@ function Presentation() {
               </Grid>
             </Grid>
           </Container>
-        </MKBox>
+        </MKBox> */}
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

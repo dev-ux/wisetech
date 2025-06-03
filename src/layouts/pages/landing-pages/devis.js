@@ -40,20 +40,23 @@ export default function Devis() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
     console.log("Form submitted:", formData);
   };
 
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        transparent={navbarTransparent}
-        light={navbarTransparent}
-        sticky
-      />
-      
-      <MKBox 
+       <DefaultNavbar
+             routes={routes}
+             action={{
+               type: "external",
+               route: "/docs/wisetech.pdf",
+               label: "Télécharger Doc",
+               color: "info",
+             }}
+             sticky
+           />
+
+      <MKBox
         component="section"
         minHeight="100vh"
         sx={{
@@ -69,10 +72,10 @@ export default function Devis() {
         }}
       >
         <Container sx={{ py: 12 }}>
-          <Box 
-            sx={{ 
-              backgroundColor: 'background.paper', 
-              borderRadius: 3, 
+          <Box
+            sx={{
+              backgroundColor: 'background.paper',
+              borderRadius: 3,
               boxShadow: 3,
               p: { xs: 3, sm: 6 },
               backdropFilter: 'blur(30px)'
@@ -123,29 +126,21 @@ export default function Devis() {
                 <Grid item xs={12} md={6}>
                   <Select
                     fullWidth
-                    label="Type de service"
+                    label="Service"
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    displayEmpty
-                    inputProps={{
-                      name: "service",
-                      id: "service-select",
-                    }}
                   >
-                    <MenuItem value="">
-                      <em>Sélectionnez un service</em>
-                    </MenuItem>
                     <MenuItem value="calcul">Calcul de structure</MenuItem>
-  <MenuItem value="expertise">Expertise structurelle</MenuItem>
-  <MenuItem value="plans">Plans d'exécution</MenuItem>
-  <MenuItem value="rehabilitation">Réhabilitation structurelle</MenuItem>
-  <MenuItem value="ouvrages">Ouvrages spéciaux</MenuItem>
-  <MenuItem value="controle">Contrôle technique</MenuItem>
-  <MenuItem value="parasismique">Étude parasismique</MenuItem>
-  <MenuItem value="geotechnique">Étude géotechnique</MenuItem>
-  <MenuItem value="autre">Autre (précisez en description)</MenuItem>
+                    <MenuItem value="expertise">Expertise structurelle</MenuItem>
+                    <MenuItem value="plans">Plans d'exécution</MenuItem>
+                    <MenuItem value="rehabilitation">Réhabilitation structurelle</MenuItem>
+                    <MenuItem value="ouvrages">Ouvrages spéciaux</MenuItem>
+                    <MenuItem value="controle">Contrôle technique</MenuItem>
+                    <MenuItem value="parasismique">Étude parasismique</MenuItem>
+                    <MenuItem value="geotechnique">Étude géotechnique</MenuItem>
+                    <MenuItem value="autre">Autre (précisez en description)</MenuItem>
                   </Select>
                 </Grid>
                 <Grid item xs={12}>
@@ -162,12 +157,12 @@ export default function Devis() {
                 </Grid>
                 <Grid item xs={12}>
                   <MKButton
+                    fullWidth
                     variant="gradient"
                     color="info"
                     type="submit"
-                    fullWidth
                   >
-                    Demander un devis
+                    Envoyer le devis
                   </MKButton>
                 </Grid>
               </Grid>
@@ -175,6 +170,8 @@ export default function Devis() {
           </Box>
         </Container>
       </MKBox>
+
+      
     </>
   );
 }

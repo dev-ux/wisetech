@@ -1,8 +1,10 @@
 // @mui icons
-import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+import PhoneIcon from "@mui/icons-material/Phone";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 // Material Kit 2 React components
 import MKTypography from "components/MKTypography";
@@ -14,74 +16,84 @@ const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "WiseTech",
+    name: "WiseTech-Eng",
     image: logoCT,
     route: "/",
   },
   socials: [
     {
-      icon: <FacebookIcon />,
-      link: "https://www.facebook.com/CreativeTim/",
+      icon: <LinkedInIcon />,
+      link: "https://www.linkedin.com/company/wisetech-eng",
     },
     {
       icon: <TwitterIcon />,
-      link: "https://twitter.com/creativetim",
+      link: "https://twitter.com/WiseTechEng",
     },
     {
       icon: <YouTubeIcon />,
-      link: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
+      link: "https://www.youtube.com/c/WiseTechEngineering",
+    },
+  ],
+  contact: [
+    {
+      icon: <LocationOnIcon fontSize="small" />,
+      text: "15 Rue de l'Innovation, 75000 Paris, France",
+    },
+    {
+      icon: <PhoneIcon fontSize="small" />,
+      text: "+33 1 23 45 67 89",
+    },
+    {
+      icon: <ContactMailIcon fontSize="small" />,
+      text: "contact@wisetech-eng.com",
     },
   ],
   menus: [
     {
-      name: "company",
+      name: "Expertises",
       items: [
-        { name: "about us", href: "/pages/landing-pages/about-us" },
-        { name: "freebies", href: "/pages/landing-pages/freebies" },
-        { name: "premium tools", href: "/pages/landing-pages/premium-tools" },
-        { name: "blog", href: "/pages/landing-pages/blog" },
+        { name: "Ingénierie Structurelle", href: "/services/structure" },
+        { name: "BIM Management", href: "/services/bim" },
+        { name: "Diagnostics Techniques", href: "/services/diagnostics" },
+        { name: "VRD & Infrastructures", href: "/services/vrd" },
       ],
     },
     {
-      name: "resources",
+      name: "Projets",
       items: [
-        { name: "illustrations", href: "/pages/landing-pages/illustrations" },
-        { name: "bits & snippets", href: "/pages/landing-pages/bits-snippets" },
-        { name: "affiliate program", href: "/pages/landing-pages/affiliate-program" },
+        { name: "Réalisations", href: "/projects" },
+        { name: "Études de cas", href: "/case-studies" },
+        { name: "Témoignages", href: "/testimonials" },
       ],
     },
     {
-      name: "help & support",
+      name: "Ressources",
       items: [
-        { name: "contact us", href: "/pages/landing-pages/contact-us" },
-        { name: "knowledge center", href: "/pages/landing-pages/knowledge-center" },
-        { name: "custom development", href: "/pages/landing-pages/custom-development" },
-        { name: "sponsorships", href: "/pages/landing-pages/sponsorships" },
+        { name: "Blog Technique", href: "/blog" },
+        { name: "Guides PDF", href: "/resources/guides" },
+        { name: "FAQ", href: "/faq" },
+        { name: "Normes en vigueur", href: "/standards" },
       ],
     },
     {
-      name: "legal",
+      name: "Entreprise",
       items: [
-        { name: "terms & conditions", href: "/pages/landing-pages/terms-conditions" },
-        { name: "privacy policy", href: "/pages/landing-pages/privacy-policy" },
-        { name: "licenses (EULA)", href: "/pages/landing-pages/licenses-eula" },
+        { name: "Notre équipe", href: "/about/team" },
+        { name: "Carrières", href: "/careers" },
+        { name: "Partenariats", href: "/partnerships" },
+        { name: "Événements", href: "/events" },
       ],
     },
   ],
+  legal: [
+    { name: "Mentions légales", href: "/legal/mentions-legales" },
+    { name: "RGPD", href: "/legal/rgpd" },
+    { name: "Conditions générales", href: "/legal/cgu" },
+    { name: "Plan du site", href: "/sitemap" },
+  ],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date} WiseTech by{" "}
-      <MKTypography
-        component="a"
-        href="/"
-        target="_blank"
-        rel="noreferrer"
-        variant="button"
-        fontWeight="regular"
-      >
-        WiseTech
-      </MKTypography>
-      .
+      © {date} WiseTech-Eng - Tous droits réservés | SIRET: 123 456 789 00045 | Ordre des Ingénieurs: O12345
     </MKTypography>
   ),
 };
