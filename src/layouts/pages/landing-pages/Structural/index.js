@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Box, Typography, Slider, Paper, Button } from "@mui/material";
+import { Container, Grid, Box, Paper, Button } from "@mui/material";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
