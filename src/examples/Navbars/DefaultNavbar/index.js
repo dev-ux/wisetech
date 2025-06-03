@@ -1,6 +1,7 @@
 
 
 import { Fragment, useState, useEffect } from "react";
+import logo from "../../assets/images/logo.webp";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -39,6 +40,12 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+
+  const brand = (
+    <MKBox component={Link} to="/" display="flex" alignItems="center" lineHeight={1}>
+      <img src={logo} alt="Wisetech-Eng" style={{ height: '40px', width: 'auto' }} />
+    </MKBox>
+  );
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
@@ -537,7 +544,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: "Wisetech-Eng",
+  brand: brand,
   transparent: false,
   light: false,
   action: false,
