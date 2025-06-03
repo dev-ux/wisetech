@@ -5,6 +5,7 @@ import Icon from "@mui/material/Icon";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Devis from "layouts/pages/landing-pages/devis";
+import Gallery from "layouts/pages/landing-pages/Gallery";
 
 
 const routes = [
@@ -33,6 +34,13 @@ const routes = [
     icon: <Icon>receipt</Icon>,
     route: "/devis",
     component: <Devis />,
+  },
+  {
+    name: "Galerie",
+    key: "gallery",
+    icon: <Icon>photo_library</Icon>,
+    route: "/gallery",
+    component: <Gallery />,
   },
  
   {
