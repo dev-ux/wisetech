@@ -137,10 +137,15 @@ export default function Devis() {
                     <MenuItem value="">
                       <em>Sélectionnez un service</em>
                     </MenuItem>
-                    <MenuItem value="web">Développement Web</MenuItem>
-                    <MenuItem value="mobile">Développement Mobile</MenuItem>
-                    <MenuItem value="design">Design UI/UX</MenuItem>
-                    <MenuItem value="consulting">Consulting</MenuItem>
+                    <MenuItem value="calcul">Calcul de structure</MenuItem>
+  <MenuItem value="expertise">Expertise structurelle</MenuItem>
+  <MenuItem value="plans">Plans d'exécution</MenuItem>
+  <MenuItem value="rehabilitation">Réhabilitation structurelle</MenuItem>
+  <MenuItem value="ouvrages">Ouvrages spéciaux</MenuItem>
+  <MenuItem value="controle">Contrôle technique</MenuItem>
+  <MenuItem value="parasismique">Étude parasismique</MenuItem>
+  <MenuItem value="geotechnique">Étude géotechnique</MenuItem>
+  <MenuItem value="autre">Autre (précisez en description)</MenuItem>
                   </Select>
                 </Grid>
                 <Grid item xs={12}>
