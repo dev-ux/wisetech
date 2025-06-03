@@ -1,7 +1,4 @@
-
-
 import { Fragment, useState, useEffect } from "react";
-import logo from "../../assets/images/logo.webp";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -30,6 +27,9 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
+// Import de l'image pour le logo
+import logo from "assets/images/logos/gray-logos/logowise.png";
+
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
@@ -40,12 +40,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
-
-  const brand = (
-    <MKBox component={Link} to="/" display="flex" alignItems="center" lineHeight={1}>
-      <img src={logo} alt="Wisetech-Eng" style={{ height: '40px', width: 'auto' }} />
-    </MKBox>
-  );
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
@@ -469,9 +463,15 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
-            <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-              {brand}
-            </MKTypography>
+            <MKBox
+              component="img"
+              src={logo}
+              alt="Wisetech-Eng logo"
+              height={40} // Ajustez la hauteur selon vos besoins
+              sx={{
+                filter: light ? "brightness(0) invert(1)" : "none",
+              }}
+            />
           </MKBox>
           <MKBox
             color="inherit"
@@ -544,7 +544,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: brand,
+  brand: "",
   transparent: false,
   light: false,
   action: false,

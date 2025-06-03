@@ -15,7 +15,6 @@ Coded by www.creative-tim.com
 
 // react-router-dom components
 import { Link } from "react-router-dom";
-import logo from "../../../assets/images/logo.webp";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -38,7 +37,7 @@ function DefaultFooter({ content }) {
           <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
             <MKBox>
               <Link to={brand.route}>
-                <MKBox component="img" src={logo} alt={brand.name} style={{ height: '40px', width: 'auto' }} mb={2} />
+                <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="2rem" mb={2} />
               </Link>
               <MKTypography variant="h6">{brand.name}</MKTypography>
             </MKBox>
