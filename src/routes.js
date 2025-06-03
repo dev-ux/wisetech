@@ -4,6 +4,7 @@ import Icon from "@mui/material/Icon";
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
+import Devis from "layouts/pages/landing-pages/devis";
 
 
 const routes = [
@@ -31,6 +32,7 @@ const routes = [
     key: "devis",
     icon: <Icon>receipt</Icon>,
     route: "/devis",
+    component: <Devis />,
   },
  
   {
