@@ -30,7 +30,7 @@ import breakpoints from "assets/theme/base/breakpoints";
 // Import de l'image pour le logo
 import logo from "assets/images/logos/gray-logos/logowise.png";
 
-function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
+function DefaultNavbar({ routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -544,7 +544,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: "",
   transparent: false,
   light: false,
   action: false,
