@@ -21,7 +21,7 @@ import routes from "routes";
 
 import footerRoutes from "footer.routes";
 
-import bgImage from "assets/images/bg-presentation.jpg";
+import bgImage from "assets/images/home.webp";
 
 function Presentation() {
   return (
@@ -45,6 +45,8 @@ function Presentation() {
           backgroundPosition: "top",
           display: "grid",
           placeItems: "center",
+          backgroundBlendMode: "multiply",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
       >
         <Container>
