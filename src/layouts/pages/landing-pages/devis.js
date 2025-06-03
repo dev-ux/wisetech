@@ -6,6 +6,8 @@ import MKButton from "components/MKButton";
 import MKInput from "components/MKInput";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import routes from "routes";
+import DefaultFooter from "examples/Footers/DefaultFooter";
+import footerRoutes from "footer.routes";
 
 export default function Devis() {
   const [formData, setFormData] = React.useState({
@@ -31,16 +33,16 @@ export default function Devis() {
 
   return (
     <>
-       <DefaultNavbar
-             routes={routes}
-             action={{
-               type: "external",
-               route: "/docs/wisetech.pdf",
-               label: "Télécharger Doc",
-               color: "info",
-             }}
-             sticky
-           />
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "external",
+          route: "/docs/wisetech.pdf",
+          label: "Télécharger Doc",
+          color: "info",
+        }}
+        sticky
+      />
 
       <MKBox
         component="section"
@@ -157,7 +159,9 @@ export default function Devis() {
         </Container>
       </MKBox>
 
-      
+      <MKBox pt={6} px={1} mt={6}>
+        <DefaultFooter content={footerRoutes} />
+      </MKBox>
     </>
   );
 }

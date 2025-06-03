@@ -64,6 +64,7 @@ export default {
         { name: "Réalisations", href: "/projects" },
         { name: "Études de cas", href: "/case-studies" },
         { name: "Témoignages", href: "/testimonials" },
+        { name: "Galerie", href: "/gallery" },
       ],
     },
     {
