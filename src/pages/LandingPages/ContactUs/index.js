@@ -11,7 +11,7 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 // Mock email sending function
 const sendEmail = async (formData) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       // Simulate successful email sending
       console.log('Sending email with data:', formData); // Use formData
