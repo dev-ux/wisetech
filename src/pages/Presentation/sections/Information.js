@@ -198,6 +198,63 @@ function Information() {
             </Grid>
           </Grid>
         </Grid>
+
+        {/* Services Informatiques */}
+        <Grid container item xs={11} spacing={3} alignItems="center" sx={{ mx: "auto", mt: 6 }}>
+          <Grid item xs={12} lg={4} sx={{ mx: "auto" }}>
+            <RotatingCard>
+              <RotatingCardFront
+                image={structureImage}
+                icon="computer"
+                title={
+                  <>
+                    Services Informatiques
+                  </>
+                }
+                description="Expertise complète en solutions informatiques pour les entreprises."
+              />
+              <RotatingCardBack
+                image={structureImage}
+                title="Services Informatiques"
+                description="Solutions informatiques sur mesure pour optimiser vos processus métier."
+              />
+            </RotatingCard>
+          </Grid>
+          <Grid item xs={12} lg={7} sx={{ ml: "auto" }}>
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={6}>
+                <DefaultInfoCard
+                  icon="bug_report"
+                  title="Diagnostic Informatique"
+                  description="Analyse complète de votre infrastructure IT et recommandations d'optimisation."
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <DefaultInfoCard
+                  icon="build"
+                  title="Maîtrise d'Oeuvre Informatique"
+                  description="Gestion complète de vos projets IT, de la conception à la mise en production."
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={3} sx={{ mt: { xs: 0, md: 6 } }}>
+              <Grid item xs={12} md={6}>
+                <DefaultInfoCard
+                  icon="code"
+                  title="Développement Web"
+                  description="Création de sites web et applications sur mesure pour votre entreprise."
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <DefaultInfoCard
+                  icon="app_registration"
+                  title="Développement d'Applications"
+                  description="Applications mobiles et desktop personnalisées pour vos besoins spécifiques."
+                />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </Container>
     </MKBox>
   );
