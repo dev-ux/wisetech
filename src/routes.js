@@ -6,6 +6,7 @@ import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Devis from "layouts/pages/landing-pages/devis";
 import Blog from "layouts/pages/landing-pages/Blog";
+import Gallery from "pages/Gallery";
 
 
 
@@ -42,6 +43,13 @@ const routes = [
     icon: <Icon>article</Icon>,
     route: "/blog",
     component: <Blog />,
+  },
+  {
+    name: "Galerie",
+    key: "gallery",
+    icon: <Icon>photo_library</Icon>,
+    route: "/gallery",
+    component: <Gallery />,
   },
  
   // {

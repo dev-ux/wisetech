@@ -20,26 +20,26 @@ function Information() {
                 <MKBox mb={5}>
                   <DefaultInfoCard
                     icon="construction"
-                    title="Structures Béton"
-                    description="Conception et réalisation de structures en béton armé pour tous types de bâtiments"
+                    title="Études"
+                    description="Diversité de bâtiments et travaux publics : restructuration de bâtiments et constructions neuves en béton, bois, métal et mixte"
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12} md={6}>
                 <MKBox mb={5}>
                   <DefaultInfoCard
-                    icon="apartment"
-                    title="Charpentes Métalliques"
-                    description="Expertise en conception et réalisation de structures métalliques"
+                    icon="precision_manufacturing"
+                    title="Services"
+                    description="BIM, Ingénierie des Structures, Diagnostic Structure, Économie de la Construction, VRD"
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12} md={6}>
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
-                    icon="layers"
-                    title="Fondations"
-                    description="Spécialistes en terrassements et fondations de bâtiments"
+                    icon="apartment"
+                    title="Travaux"
+                    description="Bureaux, Hospitalier, Scolaires, Industries, Centres commerciaux, Spectacles, Transports, Génie Civil"
                   />
                 </MKBox>
               </Grid>
@@ -47,8 +47,8 @@ function Information() {
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
                     icon="engineering"
-                    title="Ingénierie"
-                    description="Études techniques et direction d'œuvre pour vos projets"
+                    title="Spécialités"
+                    description="Béton armé, Béton précontraint, Charpente métallique, Structures mixtes, Immeubles de Grande Hauteur"
                   />
                 </MKBox>
               </Grid>
