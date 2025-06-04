@@ -88,6 +88,7 @@ function Footer() {
                   Blog
                 </MKTypography>
               </MKBox>
+
               <MKBox component="li">
                 <MKTypography
                   variant="button"

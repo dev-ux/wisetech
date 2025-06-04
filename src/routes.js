@@ -9,6 +9,7 @@ import Blog from "layouts/pages/landing-pages/Blog";
 
 
 
+
 const routes = [
   {
     name: "Accueil",
