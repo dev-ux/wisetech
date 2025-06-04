@@ -23,30 +23,27 @@ function Information() {
         <MKTypography variant="h2" mb={5} textAlign="center">
           Nos Domaines d'Expertise
         </MKTypography>
+
+        {/* Diagnostic Structure */}
         <Grid container item xs={11} spacing={3} alignItems="center" sx={{ mx: "auto" }}>
           <Grid item xs={12} lg={4} sx={{ mx: "auto" }}>
             <RotatingCard>
               <RotatingCardFront
-                image={bimImage}
-                icon="precision_manufacturing"
+                image={structureImage}
+                icon="home"
                 title={
                   <>
-                    BIM
+                    Diagnostic Structure
                     <br />
-                    (Building Information Modeling)
+                    Avant/Après Achat
                   </>
                 }
-                description="Nous vous accompagnons dans vos projets BIM pour une conception collaborative et optimisée."
+                description="Expertise technique complète pour sécuriser vos investissements immobiliers."
               />
               <RotatingCardBack
-                image={bimImage}
-                title="BIM"
-                description="Modélisation 3D intelligente, coordination interfilières, maquette numérique pour la conception, construction et maintenance."
-                action={{
-                  type: "internal",
-                  route: "/services/bim",
-                  label: "En savoir plus",
-                }}
+                image={structureImage}
+                title="Diagnostic Structure"
+                description="Études approfondies de la structure des bâtiments avant et après achat, avec recommandations techniques personnalisées."
               />
             </RotatingCard>
           </Grid>
@@ -54,39 +51,98 @@ function Information() {
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="electrical_services"
-                  title="Ingénierie Electrique CFA/CFO"
-                  description="Conception innovante en électricité, courants forts/faibles et systèmes de vidéosurveillance."
+                  icon="apartment"
+                  title="Bâtiments"
+                  description="Expertise structurelle complète pour tous types de bâtiments résidentiels et tertiaires."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="foundation"
-                  title="Ingénierie des Structures"
-                  description="Structures complexes en béton, bois, métal, aluminium et mixtes pour bâtiments et ouvrages d'art."
+                  icon="construction"
+                  title="Génie Civil"
+                  description="Études structurelles pour ouvrages d'art et infrastructures publiques."
                 />
               </Grid>
             </Grid>
             <Grid container spacing={3} sx={{ mt: { xs: 0, md: 6 } }}>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="home"
-                  title="Diagnostic Technique"
-                  description="Expertise avant achat pour sécuriser vos investissements immobiliers."
+                  icon="bridge"
+                  title="Ouvrages d'Art"
+                  description="Études structurelles spécialisées pour ponts, viaducs et autres structures complexes."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="ac_unit"
-                  title="Ingénierie Fluide"
-                  description="Conception innovante en CVC (Chauffage, Ventilation, Climatisation) et systèmes de désenfumage."
+                  icon="factory"
+                  title="Bâtiment Industriel"
+                  description="Expertise structurelle pour usines, entrepôts et installations industrielles."
                 />
               </Grid>
             </Grid>
           </Grid>
         </Grid>
 
-        {/* Deuxième ligne de cartes rotatives */}
+        {/* BIM & Études Structure */}
+        <Grid container item xs={11} spacing={3} alignItems="center" sx={{ mx: "auto", mt: 6 }}>
+          <Grid item xs={12} lg={4} sx={{ mx: "auto" }}>
+            <RotatingCard>
+              <RotatingCardFront
+                image={bimImage}
+                icon="precision_manufacturing"
+                title={
+                  <>
+                    BIM & Études Structure
+                    <br />
+                    Revit, SolidWorks
+                  </>
+                }
+                description="Modélisation 3D et études structurelles innovantes pour vos projets."
+              />
+              <RotatingCardBack
+                image={bimImage}
+                title="BIM & Études Structure"
+                description="Modélisation 3D précise et études structurelles avancées avec les logiciels de pointe."
+              />
+            </RotatingCard>
+          </Grid>
+          <Grid item xs={12} lg={7} sx={{ ml: "auto" }}>
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={6}>
+                <DefaultInfoCard
+                  icon="apartment"
+                  title="Bâtiments"
+                  description="Modélisation BIM et études structurelles pour bâtiments résidentiels et tertiaires."
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <DefaultInfoCard
+                  icon="construction"
+                  title="Génie Civil"
+                  description="Études structurelles et modélisation BIM pour infrastructures publiques."
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={3} sx={{ mt: { xs: 0, md: 6 } }}>
+              <Grid item xs={12} md={6}>
+                <DefaultInfoCard
+                  icon="bridge"
+                  title="Ouvrages d'Art"
+                  description="Modélisation 3D et études structurelles spécialisées pour ouvrages d'art."
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <DefaultInfoCard
+                  icon="factory"
+                  title="Bâtiment Industriel"
+                  description="BIM et études structurelles pour installations industrielles complexes."
+                />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        {/* Suivi de Travaux */}
         <Grid container item xs={11} spacing={3} alignItems="center" sx={{ mx: "auto", mt: 6 }}>
           <Grid item xs={12} lg={4} sx={{ mx: "auto" }}>
             <RotatingCard>
@@ -95,22 +151,15 @@ function Information() {
                 icon="construction"
                 title={
                   <>
-                    Voirie & Réseaux
-                    <br />
-                    Divers (VRD)
+                    Suivi de Travaux
                   </>
                 }
-                description="Accompagnement par nos experts en infrastructures et réseaux."
+                description="Accompagnement complet tout au long de vos projets."
               />
               <RotatingCardBack
                 image={structureImage}
-                title="VRD"
-                description="Conception des voies d'accès, réseaux secs et humides, aménagements extérieurs et coordination des interfaces."
-                action={{
-                  type: "internal",
-                  route: "/services/vrd",
-                  label: "En savoir plus",
-                }}
+                title="Suivi de Travaux"
+                description="Supervision technique et administrative pour garantir le respect des normes et délais."
               />
             </RotatingCard>
           </Grid>
@@ -118,32 +167,32 @@ function Information() {
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="savings"
-                  title="Économie de la Construction"
-                  description="Estimations précises, descriptifs techniques et états des lieux avant paiement."
+                  icon="apartment"
+                  title="Bâtiments"
+                  description="Suivi technique et administratif pour constructions résidentielles et tertiaires."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="videocam"
-                  title="Vidéosurveillance"
-                  description="Solutions complètes de sécurité et surveillance pour vos bâtiments et infrastructures."
+                  icon="construction"
+                  title="Génie Civil"
+                  description="Supervision complète pour travaux d'infrastructures publiques."
                 />
               </Grid>
             </Grid>
             <Grid container spacing={3} sx={{ mt: { xs: 0, md: 6 } }}>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="engineering"
-                  title="Restructurations"
-                  description="Solutions techniques pour la réhabilitation et la transformation de bâtiments existants."
+                  icon="bridge"
+                  title="Ouvrages d'Art"
+                  description="Suivi technique spécialisé pour construction d'ouvrages d'art."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="height"
-                  title="Grandes Hauteurs"
-                  description="Expertise spécifique pour les immeubles de grande hauteur et structures complexes."
+                  icon="factory"
+                  title="Bâtiment Industriel"
+                  description="Supervision complète pour projets industriels complexes."
                 />
               </Grid>
             </Grid>
