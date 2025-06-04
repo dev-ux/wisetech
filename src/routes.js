@@ -8,6 +8,7 @@ import Devis from "layouts/pages/landing-pages/devis";
 import Blog from "layouts/pages/landing-pages/Blog";
 
 
+
 const routes = [
   {
     name: "Accueil",
