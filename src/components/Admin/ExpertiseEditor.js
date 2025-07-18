@@ -8,9 +8,7 @@ import {
   CardContent, 
   CardActions, 
   Grid,
-  IconButton,
-  Divider,
-  TextareaAutosize
+  IconButton
 } from '@mui/material';
 import { 
   Add as AddIcon, 
