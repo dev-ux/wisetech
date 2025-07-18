@@ -10,6 +10,12 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import theme from "assets/theme";
 
 import Presentation from "layouts/pages/presentation";
+import AdminPage from "pages/Admin";
+import Login from "pages/Login";
+import { HeroProvider } from "context/HeroContext";
+import { AuthProvider, ProtectedRoute } from "context/AuthContext";
+import { ServicesProvider } from "context/ServicesContext";
+import { ExpertiseProvider } from "context/ExpertiseContext";
 
 import routes from "routes";
 
@@ -38,11 +44,28 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="/presentation" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/presentation" />} />
-      </Routes>
+      <AuthProvider>
+        <HeroProvider>
+          <ServicesProvider>
+            <ExpertiseProvider>
+              <Routes>
+                {getRoutes(routes)}
+                <Route path="/presentation" element={<Presentation />} />
+                <Route path="/login" element={<Login />} />
+                <Route 
+                  path="/admin" 
+                  element={
+                    <ProtectedRoute>
+                      <AdminPage />
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route path="*" element={<Navigate to="/presentation" />} />
+              </Routes>
+            </ExpertiseProvider>
+          </ServicesProvider>
+        </HeroProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }

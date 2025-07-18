@@ -14,6 +14,7 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import Information from "pages/Presentation/sections/Information";
 import Services from "pages/Presentation/sections/Services";
 import Realisations from "pages/Presentation/sections/Realisations";
+import { useHero } from 'context/HeroContext';
 
 import routes from "routes";
 
@@ -22,6 +23,8 @@ import footerRoutes from "footer.routes";
 const bgImage = "/images/home.webp";
 
 function Presentation() {
+  const { heroContent } = useHero();
+
   return (
     <>
       <DefaultNavbar
@@ -60,7 +63,7 @@ function Presentation() {
                 },
               })}
             >
-              Wisetech Eng{" "}
+              {heroContent.title}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -69,7 +72,7 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Experts en génie civil et construction de structures de bâtiments. Votre partenaire pour la réalisation de vos projets architecturaux.
+              {heroContent.subtitle}
             </MKTypography>
           </Grid>
         </Container>

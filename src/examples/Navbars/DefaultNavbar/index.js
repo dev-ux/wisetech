@@ -481,7 +481,17 @@ function DefaultNavbar({ routes, transparent, light, action, sticky, relative, c
           >
             {renderNavbarItems}
           </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }}>
+          <MKBox ml={{ xs: "auto", lg: 0 }} display="flex" alignItems="center">
+            <MKButton
+              component={Link}
+              to="/login"
+              variant="text"
+              color={light ? "white" : "dark"}
+              size="small"
+              sx={{ mr: 1 }}
+            >
+              <Icon>login</Icon>
+            </MKButton>
             {action &&
               (action.type === "internal" ? (
                 <MKButton

@@ -7,7 +7,11 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
+// Context
+import { useServices } from "context/ServicesContext";
+
 function Services() {
+  const { services } = useServices();
   return (
     <MKBox component="section" py={12}>
       <Container>
@@ -21,56 +25,31 @@ function Services() {
             </MKTypography>
           </Grid>
 
-          <Grid item xs={12} md={4}>
-            <MKBox mb={4}>
-              <MKTypography variant="h3" mb={2}>
-                Structures en Béton
-              </MKTypography>
-              <MKTypography variant="body1" color="text">
-                • Conception et réalisation de structures en béton armé<br/>
-                • Fondations et terrassements<br/>
-                • Réhabilitation de bâtiments<br/>
-                • Structures spéciales et complexes
-              </MKTypography>
-              <MKButton variant="gradient" color="info" fullWidth>
-                En savoir plus
-              </MKButton>
-            </MKBox>
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <MKBox mb={4}>
-              <MKTypography variant="h3" mb={2}>
-                Charpentes Métalliques
-              </MKTypography>
-              <MKTypography variant="body1" color="text">
-                • Conception et réalisation de structures métalliques<br/>
-                • Charpentes industrielles<br/>
-                • Structures préfabriquées<br/>
-                • Montage et assemblage
-              </MKTypography>
-              <MKButton variant="gradient" color="info" fullWidth>
-                En savoir plus
-              </MKButton>
-            </MKBox>
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <MKBox mb={4}>
-              <MKTypography variant="h3" mb={2}>
-                Ingénierie
-              </MKTypography>
-              <MKTypography variant="body1" color="text">
-                • Études techniques et calculs<br/>
-                • Direction d'œuvre<br/>
-                • Contrôle de qualité<br/>
-                • Assistance à maîtrise d'ouvrage
-              </MKTypography>
-              <MKButton variant="gradient" color="info" fullWidth>
-                En savoir plus
-              </MKButton>
-            </MKBox>
-          </Grid>
+          {services.map((service) => (
+            <Grid item xs={12} md={4} key={service.id}>
+              <MKBox mb={4}>
+                <MKTypography variant="h3" mb={2}>
+                  {service.title}
+                </MKTypography>
+                <MKTypography variant="body1" color="text">
+                  {service.description.map((item, index) => (
+                    <span key={index}>
+                      • {item}
+                      {index < service.description.length - 1 && <br/>}
+                    </span>
+                  ))}
+                </MKTypography>
+                <MKButton 
+                  variant="gradient" 
+                  color="info" 
+                  fullWidth
+                  sx={{ mt: 2 }}
+                >
+                  En savoir plus
+                </MKButton>
+              </MKBox>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </MKBox>
