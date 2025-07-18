@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHero } from 'context/HeroContext';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
@@ -19,6 +19,14 @@ const HeroEditor = () => {
     title: heroContent.title,
     subtitle: heroContent.subtitle
   });
+
+  // Mettre à jour formData lorsque heroContent change
+  useEffect(() => {
+    setFormData({
+      title: heroContent.title,
+      subtitle: heroContent.subtitle
+    });
+  }, [heroContent]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
