@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useServices } from 'context/ServicesContext';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import { 
   Box, 
   Button, 
@@ -16,7 +19,8 @@ import {
   Save as SaveIcon,
   Cancel as CancelIcon
 } from '@mui/icons-material';
-import { useServices } from 'context/ServicesContext';
+
+const MySwal = withReactContent(Swal);
 
 export default function ServicesEditor() {
   const { services, updateService, addService, deleteService } = useServices();
@@ -41,11 +45,23 @@ export default function ServicesEditor() {
         title: newService.title,
         description: newService.description.filter(item => item.trim() !== '')
       });
+      MySwal.fire({
+        title: 'Succès !',
+        text: 'Le service a été mis à jour avec succès',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
       setEditingId(null);
     } else if (isAdding) {
       addService({
         title: newService.title,
         description: newService.description.filter(item => item.trim() !== '')
+      });
+      MySwal.fire({
+        title: 'Succès !',
+        text: 'Le service a été ajouté avec succès',
+        icon: 'success',
+        confirmButtonText: 'OK'
       });
       setIsAdding(false);
     }
@@ -62,6 +78,28 @@ export default function ServicesEditor() {
     setNewService({
       title: '',
       description: ['', '', '', '']
+    });
+  };
+
+  const handleDelete = (id) => {
+    MySwal.fire({
+      title: 'Êtes-vous sûr ?',
+      text: 'Vous ne pourrez pas annuler cette action !',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui, supprimer',
+      cancelButtonText: 'Annuler'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteService(id);
+        MySwal.fire(
+          'Supprimé !',
+          'Le service a été supprimé avec succès.',
+          'success'
+        );
+      }
     });
   };
 
@@ -217,7 +255,7 @@ export default function ServicesEditor() {
                     </Button>
                     <Button
                       startIcon={<DeleteIcon />}
-                      onClick={() => deleteService(service.id)}
+                      onClick={() => handleDelete(service.id)}
                       color="error"
                       size="small"
                     >

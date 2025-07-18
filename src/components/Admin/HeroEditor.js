@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useHero } from 'context/HeroContext';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import {
   Box,
   Button,
   Card,
   TextField,
   Typography,
-  Container,
-  Alert,
-  Snackbar
+  Container
 } from '@mui/material';
+
+const MySwal = withReactContent(Swal);
 
 const HeroEditor = () => {
   const { heroContent, updateHeroContent } = useHero();
@@ -17,8 +19,6 @@ const HeroEditor = () => {
     title: heroContent.title,
     subtitle: heroContent.subtitle
   });
-  const [open, setOpen] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -30,14 +30,12 @@ const HeroEditor = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateHeroContent(formData);
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setOpen(false);
+    MySwal.fire({
+      title: 'Succès !',
+      text: 'Le contenu du héros a été mis à jour avec succès',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
   };
 
   return (
@@ -80,17 +78,6 @@ const HeroEditor = () => {
           </Button>
         </Box>
       </Card>
-      
-      <Snackbar 
-        open={open} 
-        autoHideDuration={3000} 
-        onClose={handleClose}
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-      >
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Les modifications ont été enregistrées avec succès !
-        </Alert>
-      </Snackbar>
     </Container>
   );
 };

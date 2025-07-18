@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useExpertise } from 'context/ExpertiseContext';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import { 
   Box, 
   Button, 
@@ -18,7 +21,8 @@ import {
   Cancel as CancelIcon,
   AddCircleOutline as AddCircleOutlineIcon
 } from '@mui/icons-material';
-import { useExpertise } from 'context/ExpertiseContext';
+
+const MySwal = withReactContent(Swal);
 
 export default function ExpertiseEditor() {
   const { 
@@ -73,8 +77,20 @@ export default function ExpertiseEditor() {
   const handleSaveDomain = () => {
     if (editingId) {
       updateExpertiseDomain(editingId, currentDomain);
+      MySwal.fire({
+        title: 'Succès !',
+        text: 'Le domaine a été mis à jour avec succès',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
     } else if (isAdding) {
       addExpertiseDomain(currentDomain);
+      MySwal.fire({
+        title: 'Succès !',
+        text: 'Le domaine a été ajouté avec succès',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
       setIsAdding(false);
     }
     
@@ -113,10 +129,34 @@ export default function ExpertiseEditor() {
   };
 
   const handleSaveCard = () => {
-    if (editingCardIndex !== null && editingId) {
-      updateExpertiseCard(editingId, editingCardIndex, currentCard);
+    if (editingCardIndex !== null) {
+      const updatedDomain = {
+        ...currentDomain,
+        cards: currentDomain.cards.map((card, idx) => 
+          idx === editingCardIndex ? currentCard : card
+        )
+      };
+      updateExpertiseCard(currentDomain.id, editingCardIndex, currentCard);
+      setCurrentDomain(updatedDomain);
+      MySwal.fire({
+        title: 'Succès !',
+        text: 'La carte a été mise à jour avec succès',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
       setEditingCardIndex(null);
-      setCurrentCard({ icon: '', title: '', description: '' });
+    } else {
+      const updatedDomain = {
+        ...currentDomain,
+        cards: [...currentDomain.cards, currentCard]
+      };
+      setCurrentDomain(updatedDomain);
+      MySwal.fire({
+        title: 'Succès !',
+        text: 'La carte a été ajoutée avec succès',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
     }
   };
 
@@ -126,6 +166,28 @@ export default function ExpertiseEditor() {
       const updatedCards = domain.cards.filter((_, index) => index !== cardIndex);
       updateExpertiseDomain(domainId, { cards: updatedCards });
     }
+  };
+
+  const handleDeleteDomain = (id) => {
+    MySwal.fire({
+      title: 'Êtes-vous sûr ?',
+      text: 'Cette action supprimera le domaine et toutes ses cartes associées !',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui, supprimer',
+      cancelButtonText: 'Annuler'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteExpertiseDomain(id);
+        MySwal.fire(
+          'Supprimé !',
+          'Le domaine a été supprimé avec succès.',
+          'success'
+        );
+      }
+    });
   };
 
   return (
@@ -377,7 +439,7 @@ export default function ExpertiseEditor() {
                     </Button>
                     <Button
                       startIcon={<DeleteIcon />}
-                      onClick={() => deleteExpertiseDomain(domain.id)}
+                      onClick={() => handleDeleteDomain(domain.id)}
                       color="error"
                       size="small"
                     >
