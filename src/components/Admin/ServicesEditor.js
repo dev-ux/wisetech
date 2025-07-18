@@ -11,13 +11,11 @@ import {
   CardContent, 
   CardActions,
   Grid,
-  Divider,
   IconButton,
   Tabs,
   Tab,
   List,
   ListItem,
-  ListItemSecondaryAction,
   Chip
 } from '@mui/material';
 import { 
@@ -26,8 +24,7 @@ import {
   Edit as EditIcon,
   Save as SaveIcon,
   Cancel as CancelIcon,
-  Image as ImageIcon,
-  Link as LinkIcon,
+
   Close as CloseIcon
 } from '@mui/icons-material';
 
@@ -57,7 +54,7 @@ export default function ServicesEditor() {
   const [newService, setNewService] = useState(emptyService());
   const [isAdding, setIsAdding] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
-  const [imagePreview, setImagePreview] = useState('');
+
   
   // État pour la gestion des erreurs de validation
   const [errors, setErrors] = useState({
@@ -136,14 +133,7 @@ export default function ServicesEditor() {
     handleSave();
   };
 
-  useEffect(() => {
-    // Mettre à jour l'aperçu de l'image quand l'URL change
-    if (newService.image) {
-      setImagePreview(newService.image);
-    } else {
-      setImagePreview('');
-    }
-  }, [newService.image]);
+  // L'aperçu de l'image est maintenant géré directement via l'URL de l'image dans le state
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
@@ -193,7 +183,6 @@ export default function ServicesEditor() {
     }
     
     setNewService(emptyService());
-    setImagePreview('');
   };
 
   // Gestion de l'annulation avec confirmation
@@ -213,7 +202,6 @@ export default function ServicesEditor() {
         setEditingId(null);
         setIsAdding(false);
         setNewService(emptyService());
-        setImagePreview('');
         setActiveTab(0);
         setErrors({
           title: '',
