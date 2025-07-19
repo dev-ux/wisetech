@@ -8,10 +8,16 @@ import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
 // Context
+import { useNavigate } from 'react-router-dom';
 import { useServices } from "context/ServicesContext";
 
 function Services() {
   const { services } = useServices();
+  const navigate = useNavigate();
+  
+  const handleLearnMore = (serviceId) => {
+    navigate(`/service/${serviceId}`);
+  };
   return (
     <MKBox component="section" py={12}>
       <Container>
@@ -44,6 +50,7 @@ function Services() {
                   color="info" 
                   fullWidth
                   sx={{ mt: 2 }}
+                  onClick={() => handleLearnMore(service.id)}
                 >
                   En savoir plus
                 </MKButton>

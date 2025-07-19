@@ -7,6 +7,7 @@ import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Devis from "layouts/pages/landing-pages/devis";
 import Blog from "layouts/pages/landing-pages/Blog";
 import Gallery from "pages/Gallery";
+import ServiceDetail from "pages/ServiceDetail";
 
 
 
@@ -49,8 +50,15 @@ const routes = [
     key: "gallery",
     icon: <Icon>photo_library</Icon>,
     route: "/gallery",
-    component: <Gallery />,
+    component: <Gallery />
   },
+  {
+    name: "Service",
+    key: "service-detail",
+    route: "/service/:id",
+    component: <ServiceDetail />,
+    hideFromNavbar: true
+  }
  
   // {
   //   name: "sign in",

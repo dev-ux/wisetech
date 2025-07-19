@@ -68,7 +68,10 @@ function DefaultNavbar({ routes, transparent, light, action, sticky, relative, c
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }) => (
+  // Filter out routes that should be hidden from navbar
+  const filteredRoutes = routes.filter(route => !route.hideFromNavbar);
+
+  const renderNavbarItems = filteredRoutes.map(({ name, icon, href, route, collapse }) => (
     <DefaultNavbarDropdown
       key={name}
       name={name}
@@ -88,8 +91,8 @@ function DefaultNavbar({ routes, transparent, light, action, sticky, relative, c
     />
   ));
 
-  // Render the routes on the dropdown menu
-  const renderRoutes = routes.map(({ name, collapse, columns, rowsPerColumn }) => {
+  // Render the routes on the dropdown menu (using filtered routes)
+  const renderRoutes = filteredRoutes.map(({ name, collapse, columns, rowsPerColumn }) => {
     let template;
 
     // Render the dropdown menu that should be display as columns
@@ -478,20 +481,9 @@ function DefaultNavbar({ routes, transparent, light, action, sticky, relative, c
             display={{ xs: "none", lg: "flex" }}
             ml="auto"
             mr={center ? "auto" : 0}
+            alignItems="center"
           >
             {renderNavbarItems}
-          </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }} display="flex" alignItems="center">
-            <MKButton
-              component={Link}
-              to="/login"
-              variant="text"
-              color={light ? "white" : "dark"}
-              size="small"
-              sx={{ mr: 1 }}
-            >
-              <Icon>login</Icon>
-            </MKButton>
             {action &&
               (action.type === "internal" ? (
                 <MKButton
@@ -504,6 +496,7 @@ function DefaultNavbar({ routes, transparent, light, action, sticky, relative, c
                   }
                   color={action.color ? action.color : "info"}
                   size="small"
+                  sx={{ ml: 1 }}
                 >
                   {action.label}
                 </MKButton>
@@ -520,6 +513,7 @@ function DefaultNavbar({ routes, transparent, light, action, sticky, relative, c
                   }
                   color={action.color ? action.color : "info"}
                   size="small"
+                  sx={{ ml: 1 }}
                 >
                   {action.label}
                 </MKButton>
